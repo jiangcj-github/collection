@@ -1,0 +1,33 @@
+<html>
+	<head>
+		<title>代码测试</title>
+	</head>
+	<body>
+
+		<input type="text" oninput="onInputThr()">
+		<div style="width: 400px;height: 400px;background: red;" onmousemove="onMouseMoveThr()">
+
+		</div>
+
+		<script src="../util/index.js"></script>
+		<script src="../throttle/index.js"></script>
+		<script>
+			
+			let onInputThr = thrIm(onInput, 1000);
+			let onMouseMoveThr = thrIm(onMouseMove, 100);
+
+			function onInput(e){
+				console.log("inpt",e);
+			}
+
+			function onBlur(){
+				console.log("blur");
+			}
+
+			function onMouseMove(){
+				console.log("mousemove")
+			}
+		
+		</script>
+	</body>
+</html>
