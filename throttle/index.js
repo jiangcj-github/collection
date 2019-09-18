@@ -50,9 +50,9 @@ function thrIm(fn, delay = 200){
 	}
 }
 
-export default {
-	deb,
-	debIm,
-	thr,
-	thrIm
-}
+// export default {
+// 	deb,
+// 	debIm,
+// 	thr,
+// 	thrIm
+// }

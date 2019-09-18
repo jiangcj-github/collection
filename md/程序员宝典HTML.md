@@ -1,0 +1,98 @@
+选择节点
+    document.querySelector()
+    document.querySelectorAll()
+
+-----------------------------------------------------------------------------------------------------------------
+获取节点相对浏览器视窗位置
+    getBoundingClientRect()
+    *  left: 元素最左边（不包括border）到可视区最左边的距离
+    *  top: 元素顶边（不包括border）到可视区最顶部的距离
+    *  height: 元素的offsetHeight
+    *  width: 元素的offsetWidth
+
+
+parentNode -直接父节点
+
+定位位置
+    offsetParent -定位父节点(position非static)，默认body
+    offsetWidth -元素border+padding+滚动条宽度+content
+    offsetHeight 
+    offsetLeft -元素的左外边框至offsetParent元素的左内边框之间的像素距离
+    offsetTop
+
+滚动位置
+    scrollWidth -元素真实宽度，无滚动条=clientWidth，有滚动条=clientWidth+隐藏部分
+    scrollHeight
+    scrollTop -内容顶部 到 可视区顶部 距离(非滚动节点0)
+    scrollLeft
+
+内容位置
+    clientWidth -元素padding+content
+    clientHeight
+    clientLeft -左边框宽度
+    clientTop
+
+    style.width -css设置的宽度，未设置返回空
+    style.height
+    style.left
+    style.top
+
+窗口尺寸
+    innerWidth -窗口可视区宽度（含滚动条）,仅window可用（不包括浏览器控制台、菜单栏、工具栏） 
+    innerHeight
+
+内容可视区尺寸
+    document.body.clientWidth
+    document.body.clientHeight
+
+图像尺寸
+    width -图片显示宽度
+    height
+    natureWidth -原始宽度
+    natureHeight 
+
+---------------------------------------------------------------------------------------------------------
+
+鼠标事件
+    clientX、clientY
+    点击位置距离当前body可视区域的x，y坐标
+    clientX - el.getBoundClientRect().left
+
+pageX、pageY
+    对于整个页面来说，包括了被卷去的body部分的长度
+
+screenX、screenY
+    点击位置距离当前电脑屏幕的x，y坐标
+
+x、y
+    和screenX、screenY一样
+
+---------------------------------------------------------------------------------------------------------
+scrollIntoView  -滚动节点至可视区
+scrollIntoViewIfNeeded  -节点不在可视区则滚动，否则忽略 
+
+---------------------------------------------------------------------------------------------------------
+
+js操作DOM样式类
+
+    el.classList.add();
+    el.classList.remove();
+    el.classList.toggle();
+    el.classList.contains();
+    el.classList.replace();
+    console.dir(el.classList);
+
+    el.style.setProperty("font-size","15px");
+    el.style.fontSize = "15px";
+    el.style.cssText = "font-size: 15px;";
+    el.style.getPropertyValue("font-size");
+    console.dir(el.style);
+
+window.getComputedStyle(el)  //获取最终显示的样式
+
+
+
+
+
+
+

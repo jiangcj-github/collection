@@ -1,0 +1,109 @@
+<html>
+	<head>
+		<title>代码测试</title>
+	</head>
+	<style>
+		.select{
+			width: 130px;
+			line-height: 20px;
+			font-size: 14px;
+			cursor: pointer;
+			display: block;
+			outline: 0;
+			user-select: none;
+			position: relative;
+		}
+		
+		.select .val{
+			border: 1px solid #1FBBA6;
+			line-height: 36px;
+			padding: 0 20px;
+			border-radius: 4px;
+			position: relative;
+		}
+		.select .val::after{
+			content: "";
+			border-bottom: 1px solid #1FBBA6;
+			border-left: 1px solid #1FBBA6;
+			transform: rotate(-45deg);
+			position: absolute;
+			right: 20px;
+			width: 6px;
+			height: 6px;
+			top: 50%;
+			margin-top: -6px;
+		}
+		.select:hover .val{
+			border-color: #C0C4CC;
+		}
+		
+		.select .ul{
+			border: solid 1px #E4E7ED;
+			border-top: 0;
+			display: none;
+			width: 100%;
+			box-sizing: border-box;
+			position: absolute;
+			top: 100%;
+			box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+			border-radius: 4px;
+		}
+		.select .ul.show{
+			display: block;
+		}
+		.select .ul .li{
+			padding: 0 20px;
+			line-height: 36px;
+		}
+		.select .ul .li:hover{
+			background-color: #F5F7FA;
+		}
+		.select .ul .li.active{
+			color: #1FBBA6;
+			font-weight: bold;
+		}
+	</style>
+	<body>
+
+		<div tabindex="1" class="select" onblur="blurX()">
+			<div class="val" onclick="clickV()">xxx</div>
+			<div class="ul">
+				<div class="li" onclick="clickxxx(this)">今天</div>
+				<div class="li" onclick="clickxxx(this)">昨天</div>
+				<div class="li" onclick="clickxxx(this)">本周</div>
+				<div class="li" onclick="clickxxx(this)">本月</div>
+				
+			</div>
+		</div>
+
+	
+		<script>
+		
+			function clickV(){
+				let $ul = document.querySelector(".ul");
+				$ul.classList.toggle("show");
+			}
+			
+			function clickxxx(el){
+				$li = document.querySelectorAll(".li");
+				[...$li].map(e => e.classList.remove("active"));
+
+				el.classList.add("active");
+
+				let $ul = document.querySelector(".ul");
+				$ul.classList.remove("show");
+
+				let $val = document.querySelector(".val");
+				$val.innerText = el.innerText;
+			}
+
+
+			function blurX(){
+				let $ul = document.querySelector(".ul");
+				$ul.classList.remove("show");
+			}
+		
+		</script>
+		
+	</body>
+</html>
