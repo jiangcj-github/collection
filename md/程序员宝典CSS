@@ -61,3 +61,10 @@ css实现多列登高
     overflow: hidden 隐藏滚动条
     通过设置scrollTop控制滚动
     自定义滚动条Div
+
+BFC
+    子元素margin-top无法撑开父元素，原因是子元素margin与父元素margin重合
+    解决方法:
+        1. 给父元素添加border或padding（top）
+        2. float父元素
+        3. 设置父元素的position

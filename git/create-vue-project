@@ -1,0 +1,21 @@
+npm install --global vue-cli
+
+vue init webpack my-project
+
+cd my-project 
+
+npm install 
+
+npm run dev
+
+
+安装scss
+npm install node-sass --save-dev 
+npm install sass-loader --save-dev
+npm install style-loader --save-dev
+
+sass兼容
+ "sass-loader": "^7.3.1",
+
+ cli图像界面
+ vue ui

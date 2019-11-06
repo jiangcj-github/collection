@@ -1,0 +1,73 @@
+<html>
+	<head>
+		<title>代码测试</title>
+	</head>
+	<style>
+		ul {
+            display: flex;
+            position: absolute;
+            width: 800px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        li {
+            all: unset;
+            position: relative;
+            padding: 20px;
+            font-size: 24px;
+            color: #000;
+            line-height: 1;
+            transition: 0.2s all linear;
+            cursor: pointer;
+        }
+
+        li::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            height: 100%;
+            border-bottom: 2px solid #000;
+            transition: 0.2s all linear;
+            width: 0;
+            left: 100%;
+        }
+
+        li.active::before {
+            width: 100%;
+            left: 0;
+        }
+
+        li.active ~ li::before {
+            left: 0;
+        }
+
+	</style>
+	<body>
+
+        <!--菜单下划线滑动-->
+		<ul class="ul" onclick="clikcLi()">
+            <li class="li active">标题1</li>
+            <li class="li">标题2</li>
+        </ul>
+
+	
+		<script>
+		
+			function clikcLi() {
+                let curLi = window.event.target;
+               
+                let ul = document.querySelector(".ul");
+                let li = document.querySelectorAll(".li");
+                [...li].map(e => {
+                    console.dir(e);
+                    e.classList.remove("active");
+                })
+                curLi.classList.add("active");
+            }
+		
+		</script>
+		
+	</body>
+</html>

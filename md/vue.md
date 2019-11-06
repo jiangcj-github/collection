@@ -1,0 +1,6 @@
+props 更新，组件不会重新mounted
+props传入对象，子组件修改对象属性，会影响父组件
+
+watch immediate初始化修改data不会触发其他watch
+
+组件创建的时候props要用immediate才能监听到

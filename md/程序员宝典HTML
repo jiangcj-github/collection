@@ -2,6 +2,11 @@
     document.querySelector()
     document.querySelectorAll()
 
+DOM操作
+    let dom = document.querySelector()
+    dom.remove()        -删除节点
+    dom.removeChild()   -删除子节点
+
 -----------------------------------------------------------------------------------------------------------------
 获取节点相对浏览器视窗位置
     getBoundingClientRect()
